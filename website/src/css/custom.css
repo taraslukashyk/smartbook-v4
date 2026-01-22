@@ -92,23 +92,62 @@ a {
   text-decoration: none;
 }
 
-/* Grayscale logo for Polkadot look */
-.polkadot-logo {
-  filter: grayscale(100%) brightness(1.2);
+/* Logo Styling */
+.navbar__logo {
+  height: 2.5rem;
+  /* Slightly larger logo */
+  margin-right: 0.5rem;
 }
 
-[data-theme='dark'] .polkadot-logo {
-  filter: grayscale(100%) invert(1);
+/* Modern Sidebar Styling */
+.menu__list {
+  padding-left: 0;
 }
 
-/* Polkadot sidebar - clean and tight */
-.menu__list-item-collapsible:hover {
-  background: var(--ifm-color-emphasis-100);
+.menu__list-item {
+  margin-bottom: 0.25rem;
+}
+
+.menu__link {
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--ifm-font-color-base);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover {
+  background-color: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-primary);
+  text-decoration: none;
 }
 
 .menu__link--active {
-  font-weight: 600;
+  background-color: rgba(230, 0, 122, 0.1);
+  /* Polkadot accent with opacity */
   color: var(--polkadot-accent) !important;
+  font-weight: 600;
+}
+
+/* Dark mode adjustments for active state */
+[data-theme='dark'] .menu__link--active {
+  background-color: rgba(230, 0, 122, 0.2);
+  color: #ff4d9e !important;
+}
+
+.menu__list-item-collapsible:hover {
+  background: transparent;
+}
+
+.menu__caret {
+  opacity: 0.5;
+}
+
+.menu__link--active .menu__caret {
+  opacity: 1;
+  color: var(--polkadot-accent);
 }
 
 /* Clean monochromatic admonitions */
