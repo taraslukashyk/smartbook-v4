@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap');
+
+/**
+ * Polkadot Wiki Inspired Theme
+ */
+:root {
+  --ifm-font-family-base: 'DM Sans', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --ifm-heading-font-family: 'DM Serif Display', serif;
+
+  /* Light Mode - Neutral/Stone Palette */
+  --ifm-color-primary: #1c1917;
+  --ifm-color-primary-dark: #000000;
+  --ifm-color-primary-darker: #000000;
+  --ifm-color-primary-darkest: #000000;
+  --ifm-color-primary-light: #44403c;
+  --ifm-color-primary-lighter: #57534e;
+  --ifm-color-primary-lightest: #78716c;
+
+  --ifm-background-color: #fafaf9;
+  --ifm-navbar-background-color: #fafaf9;
+  --ifm-footer-background-color: #f5f5f4;
+
+  --ifm-heading-color: #1c1917;
+  --ifm-font-color-base: #57534e;
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --polkadot-accent: #e6007a;
+}
+
+[data-theme='dark'] {
+  /* Dark Mode - Polkadot Black/Stone Palette */
+  --ifm-color-primary: #fafaf9;
+  --ifm-color-primary-dark: #f5f5f4;
+  --ifm-color-primary-darker: #e7e5e4;
+  --ifm-color-primary-darkest: #d6d3d1;
+  --ifm-color-primary-light: #ffffff;
+  --ifm-color-primary-lighter: #ffffff;
+  --ifm-color-primary-lightest: #ffffff;
+
+  --ifm-background-color: #0f0f0f;
+  --ifm-navbar-background-color: #0f0f0f;
+  --ifm-footer-background-color: #1c1917;
+
+  --ifm-heading-color: #fafaf9;
+  --ifm-font-color-base: #a8a29e;
+
+  --ifm-menu-color: #a8a29e;
+  --ifm-menu-color-active: #fafaf9;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.hero--primary {
+  background: var(--ifm-background-color);
+  color: var(--ifm-heading-color);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.navbar {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.footer {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* Polkadot accent for specific elements */
+.button--primary {
+  background-color: var(--polkadot-accent);
+  border-color: var(--polkadot-accent);
+}
+
+.button--primary:hover {
+  background-color: #cc006d;
+  border-color: #cc006d;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Grayscale logo for Polkadot look */
+.polkadot-logo {
+  filter: grayscale(100%) brightness(1.2);
+}
+
+[data-theme='dark'] .polkadot-logo {
+  filter: grayscale(100%) invert(1);
+}
+
+/* Polkadot sidebar - clean and tight */
+.menu__list-item-collapsible:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.menu__link--active {
+  font-weight: 600;
+  color: var(--polkadot-accent) !important;
+}
+
+/* Clean monochromatic admonitions */
+.admonition {
+  border-radius: 4px;
+  border-left-width: 4px;
+  background-color: var(--ifm-color-emphasis-100);
+  border-left-color: var(--ifm-heading-color);
+  color: var(--ifm-font-color-base);
+}
+
+.admonition-icon svg {
+  fill: var(--ifm-heading-color);
+}
+
+.admonition-heading {
+  font-family: var(--ifm-font-family-base);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+/* Polkadot Typography extras */
+.markdown h1 {
+  font-size: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.markdown h2 {
+  font-size: 2rem;
+  margin-top: 3rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  padding-bottom: 0.5rem;
+}
+
+/* Noise/Grain background effect */
+.noise-bg {
+  position: relative;
+  background-color: var(--ifm-background-color);
+}
+
+.noise-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Polkadot-style Grid Cards */
+.wiki-card {
+  background: var(--ifm-color-emphasis-0);
+  padding: 1.5rem;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wiki-card:hover {
+  background: var(--ifm-color-emphasis-100);
+  text-decoration: none !important;
+}
+
+.wiki-card h3 {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-heading-color);
+}
+
+.wiki-card p {
+  font-size: 0.95rem;
+  color: var(--ifm-font-color-base);
+  margin-bottom: 0;
+}
+
+/* Primary buttons - Black in Polkadot */
+.button--dark {
+  background-color: #1c1917;
+  color: #fafaf9;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button--dark:hover {
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+}
+
+[data-theme='dark'] .button--dark {
+  background-color: #fafaf9;
+  color: #1c1917;
+}
+
+[data-theme='dark'] .button--dark:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Info Box (Light Blue) */
+.admonition-info {
+  background-color: #ecfeff;
+  border-left-color: #06b6d4;
+  color: #164e63;
+}
+
+[data-theme='dark'] .admonition-info {
+  background-color: #083344;
+  border-left-color: #06b6d4;
+  color: #cffafe;
+}
