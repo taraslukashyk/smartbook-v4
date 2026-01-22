@@ -8,20 +8,23 @@
   --ifm-heading-font-family: 'DM Serif Display', serif;
 
   /* Light Mode - Neutral/Stone Palette */
-  --ifm-color-primary: #1c1917;
-  --ifm-color-primary-dark: #000000;
-  --ifm-color-primary-darker: #000000;
-  --ifm-color-primary-darkest: #000000;
-  --ifm-color-primary-light: #44403c;
-  --ifm-color-primary-lighter: #57534e;
-  --ifm-color-primary-lightest: #78716c;
+  /* Polkadot / Wiki Style Colors */
+  --ifm-color-primary: #e6007a;
+  --ifm-color-primary-dark: #cc006d;
+  --ifm-color-primary-darker: #bf0066;
+  --ifm-color-primary-darkest: #990052;
+  --ifm-color-primary-light: #ff1a8e;
+  --ifm-color-primary-lighter: #ff2694;
+  --ifm-color-primary-lightest: #ff4da3;
 
-  --ifm-background-color: #fafaf9;
-  --ifm-navbar-background-color: #fafaf9;
-  --ifm-footer-background-color: #f5f5f4;
+  --ifm-background-color: #ffffff;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #f7f7f7;
 
-  --ifm-heading-color: #1c1917;
-  --ifm-font-color-base: #57534e;
+  --ifm-heading-color: #1a1a1a;
+  --ifm-font-color-base: #333333;
+  --ifm-menu-color: #666666;
+  --ifm-menu-color-active: #e6007a;
 
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
@@ -99,55 +102,65 @@ a {
   margin-right: 0.5rem;
 }
 
-/* Modern Sidebar Styling */
+/* Modern Sidebar Styling - Matches reference image */
 .menu__list {
   padding-left: 0;
+  margin-bottom: 0.5rem;
 }
 
-.menu__list-item {
-  margin-bottom: 0.25rem;
+/* Sidebar Categories (Headers) */
+.menu__list-item-collapsible {
+  padding: 0.5rem 0.5rem;
+  margin-top: 1rem;
 }
 
-.menu__link {
+.menu__list-item-collapsible .menu__link {
   font-family: var(--ifm-font-family-base);
-  font-size: 0.95rem;
-  font-weight: 400;
-  color: var(--ifm-font-color-base);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
-
-.menu__link:hover {
-  background-color: var(--ifm-color-emphasis-100);
-  color: var(--ifm-color-primary);
-  text-decoration: none;
-}
-
-.menu__link--active {
-  background-color: rgba(230, 0, 122, 0.1);
-  /* Polkadot accent with opacity */
-  color: var(--polkadot-accent) !important;
-  font-weight: 600;
-}
-
-/* Dark mode adjustments for active state */
-[data-theme='dark'] .menu__link--active {
-  background-color: rgba(230, 0, 122, 0.2);
-  color: #ff4d9e !important;
+  font-weight: 700; /* Bold headers */
+  color: var(--ifm-heading-color); /* Black/Dark text */
+  font-size: 1rem;
+  padding: 0;
 }
 
 .menu__list-item-collapsible:hover {
   background: transparent;
 }
 
-.menu__caret {
-  opacity: 0.5;
+/* Sidebar Links (Items) */
+.menu__link {
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ifm-menu-color); /* Gray text */
+  padding: 0.4rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+  line-height: 1.4;
 }
 
-.menu__link--active .menu__caret {
-  opacity: 1;
-  color: var(--polkadot-accent);
+.menu__link:hover {
+  background-color: transparent;
+  color: var(--ifm-color-primary); /* Pink on hover */
+  text-decoration: none;
+}
+
+.menu__link--active {
+  background-color: transparent;
+  color: var(--ifm-color-primary) !important;
+  font-weight: 700;
+  border-left: 2px solid var(--ifm-color-primary); /* Minimal left border indicator */
+  padding-left: calc(0.5rem - 2px); /* Compensation for border */
+}
+
+/* Hide carets/arrows if desired, or style them subtly */
+.menu__caret {
+  opacity: 0.3;
+}
+
+[data-theme='dark'] .menu__link--active {
+  background-color: transparent;
+  color: var(--ifm-color-primary-light) !important;
+  border-left-color: var(--ifm-color-primary-light);
 }
 
 /* Clean monochromatic admonitions */
