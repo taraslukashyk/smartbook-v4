@@ -95,7 +95,7 @@ const config: Config = {
       title: 'Smartbook v4',
       logo: {
         alt: 'Smartbook Logo',
-        src: 'img/logo.jpg',
+        src: 'img/logo-v2.jpg',
       },
       items: [
         {
