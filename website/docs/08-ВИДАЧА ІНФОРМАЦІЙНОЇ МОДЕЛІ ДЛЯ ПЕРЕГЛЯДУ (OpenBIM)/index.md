@@ -1,5 +1,6 @@
 ---
 title: "ВИДАЧА ІНФОРМАЦІЙНОЇ МОДЕЛІ ДЛЯ ПЕРЕГЛЯДУ (OpenBIM)"
+id: section-8
 sidebar_position: 1
 ---
 
