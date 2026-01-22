@@ -95,8 +95,7 @@ const config: Config = {
       title: 'Smartbook v4',
       logo: {
         alt: 'Smartbook Logo',
-        src: 'img/logo.svg',
-        className: 'polkadot-logo', // We can style this to be grayscale
+        src: 'img/logo.jpg',
       },
       items: [
         {
