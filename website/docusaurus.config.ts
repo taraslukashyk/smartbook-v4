@@ -10,8 +10,8 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // GitHub Pages deployment config
-  organizationName: 'vash-uzer-name', // Потрібно замінити на ваш GitHub Username
-  projectName: 'smartbook-v4',      // Потрібно замінити на назву репозиторію
+  organizationName: 'taraslukashyk',
+  projectName: 'smartbook-v4',
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
@@ -21,7 +21,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://vash-uzer-name.github.io',
+  url: 'https://taraslukashyk.github.io',
   baseUrl: '/smartbook-v4/', // Базовий шлях має збігатися з назвою репозиторію
 
   onBrokenLinks: 'warn',
