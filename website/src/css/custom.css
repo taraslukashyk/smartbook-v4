@@ -1,283 +1,203 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=DM+Serif+Display&family=Roboto+Mono&display=swap');
 
 :root {
-  /* --- TYPOGRAPHY --- */
-  --ifm-font-family-base: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
-  --ifm-font-family-monospace: 'JetBrains Mono', monospace;
-  --ifm-heading-font-family: 'Manrope', sans-serif;
-  --ifm-heading-font-weight: 700;
-  --ifm-font-size-base: 16px;
-  --ifm-line-height-base: 1.6;
+  /* --- TYPOGRAPHY (Polkadot Style) --- */
+  --ifm-font-family-base: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-family: 'DM Serif Display', serif;
+  --ifm-font-family-monospace: 'Roboto Mono', monospace;
 
-  /* --- LIGHT MODE PALETTE (Clean, Professional) --- */
-  --ifm-color-primary: #4f46e5;
-  /* Indigo 600 */
-  --ifm-color-primary-dark: #4338ca;
-  --ifm-color-primary-darker: #3730a3;
-  --ifm-color-primary-darkest: #312e81;
-  --ifm-color-primary-light: #6366f1;
-  --ifm-color-primary-lighter: #818cf8;
-  --ifm-color-primary-lightest: #c7d2fe;
+  --ifm-heading-font-weight: 400;
+  /* Serif headers usually look better at 400 */
+  --ifm-font-size-base: 17px;
+  --ifm-line-height-base: 1.625;
 
-  --ifm-background-color: #f8fafc;
-  /* Slate 50 */
+  /* --- LIGHT MODE (Polkadot Warm Grey) --- */
+  --ifm-color-primary: #1c1917;
+  /* Noble Black */
+  --ifm-background-color: #fafaf9;
+  /* Stone 50 */
   --ifm-background-surface-color: #ffffff;
-  --ifm-text-color: #1e293b;
-  /* Slate 800 */
-  --ifm-heading-color: #0f172a;
-  /* Slate 900 */
+  --ifm-text-color: #57534e;
+  /* Stone 600 */
+  --ifm-heading-color: #1c1917;
+  /* Stone 900 */
 
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(226, 232, 240, 0.6);
-  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  --ifm-navbar-background-color: rgba(250, 250, 249, 0.8);
+  --ifm-navbar-link-color: #57534e;
+  --ifm-navbar-link-hover-color: #1c1917;
 
-  --border-radius-base: 12px;
-  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --ifm-sidebar-background-color: transparent;
+
+  --border-color: #e7e5e4;
+  /* Stone 200 */
+  --accent-color: #1c1917;
+
+  --ifm-hr-border-color: var(--border-color);
+
+  /* Buttons */
+  --ifm-button-border-radius: 9999px;
 }
 
 [data-theme='dark'] {
-  /* --- DARK MODE PALETTE (Deep, Premium Vibe) --- */
-  --ifm-color-primary: #818cf8;
-  /* Indigo 400 */
-  --ifm-color-primary-dark: #6366f1;
-  --ifm-color-primary-darker: #4f46e5;
-  --ifm-color-primary-darkest: #4338ca;
-  --ifm-color-primary-light: #a5b4fc;
-  --ifm-color-primary-lighter: #c7d2fe;
-  --ifm-color-primary-lightest: #e0e7ff;
+  /* --- DARK MODE (Polkadot Slate) --- */
+  --ifm-background-color: #1c1917;
+  /* Stone 900 */
+  --ifm-background-surface-color: #292524;
+  /* Stone 800 */
+  --ifm-text-color: #a8a29e;
+  /* Stone 400 */
+  --ifm-heading-color: #fafaf9;
+  /* Stone 50 */
+  --ifm-color-primary: #fafaf9;
 
-  --ifm-background-color: #020617;
-  /* Slate 950 - Deepest Dark */
-  --ifm-background-surface-color: #0f172a;
-  /* Slate 900 */
-  --ifm-text-color: #cbd5e1;
-  /* Slate 300 */
-  --ifm-heading-color: #f8fafc;
-  /* Slate 50 */
+  --ifm-navbar-background-color: rgba(28, 25, 23, 0.8);
+  --ifm-navbar-link-color: #a8a29e;
+  --ifm-navbar-link-hover-color: #fafaf9;
 
-  --glass-bg: rgba(15, 23, 42, 0.6);
-  --glass-border: rgba(51, 65, 85, 0.5);
-  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  --border-color: #292524;
+  /* Stone 800 */
+  --accent-color: #fafaf9;
 }
 
-/* --- GENERAL LAYOUT & VIBE --- */
+/* --- GLOBAL STYLES --- */
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
 .main-wrapper {
   background: var(--ifm-background-color);
 }
 
-/* --- NAVBAR --- */
+/* Navbar with Backdrop Blur */
 .navbar {
-  background-color: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--border-color);
   box-shadow: none;
-  height: 4rem;
+  padding: 0.5rem 2rem;
+}
+
+.navbar__brand {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.4rem;
 }
 
 .navbar__title {
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  font-size: 1.25rem;
-  background: linear-gradient(135deg, var(--ifm-color-primary-light), var(--ifm-color-primary-lighter));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--ifm-heading-color) !important;
+  font-weight: 400;
 }
 
 .navbar__item {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.95rem;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.2s ease;
 }
 
-.navbar__item:hover {
-  background-color: rgba(99, 102, 241, 0.1);
-  color: var(--ifm-color-primary);
-}
-
-/* --- SIDEBAR --- */
+/* Sidebar Styling (Minimalist) */
 .theme-doc-sidebar-container {
-  border-right: 1px solid var(--glass-border) !important;
-  background-color: transparent !important;
+  border-right: 1px solid var(--border-color) !important;
 }
 
 .menu {
-  background-color: transparent;
-  padding: 1rem;
-}
-
-.menu__list-item-collapsible {
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.05em;
-  color: var(--ifm-color-emphasis-600);
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+  padding: 1.5rem 1rem;
 }
 
 .menu__link {
-  border-radius: 8px;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
   color: var(--ifm-text-color);
-  transition: all 0.2s ease;
-}
-
-.menu__link:hover {
-  background-color: rgba(99, 102, 241, 0.08);
-  color: var(--ifm-color-primary);
 }
 
 .menu__link--active {
-  background-color: rgba(99, 102, 241, 0.15);
-  color: var(--ifm-color-primary);
-  font-weight: 600;
+  background-color: transparent !important;
+  color: var(--accent-color) !important;
+  font-weight: 700;
 }
 
-/* --- CONTENT AREA --- */
+.menu__list-item {
+  margin-top: 0.25rem;
+}
+
+/* Content Area (Polkadot Journal Feel) */
 .markdown h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(to right, var(--ifm-color-primary-light), var(--ifm-color-primary-lighter));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  color: var(--ifm-heading-color);
 }
 
 .markdown h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid var(--glass-border);
-  padding-bottom: 0.5rem;
+  font-size: 2.25rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  border-bottom: none;
+  font-weight: 400;
 }
 
 .markdown h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.5rem;
   margin-top: 2rem;
+  font-weight: 400;
 }
 
 .markdown p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
+  max-width: 75ch;
+  /* Comfortable reading width */
 }
 
-/* --- CARDS & BLOCKS --- */
-.card-container,
-.card,
+/* Admonitions (Polkadot Style Blocks) */
 .admonition {
-  border-radius: var(--border-radius-base);
-  border: 1px solid var(--glass-border);
-  background-color: var(--ifm-background-surface-color);
-  box-shadow: var(--card-shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--ifm-background-surface-color);
+  box-shadow: none;
+  padding: 1.25rem;
 }
 
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+.admonition-heading {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Pill Buttons */
+.button {
+  border-radius: 9999px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 500;
+  transition: transform 0.1s ease;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.button--primary {
+  background-color: var(--ifm-color-primary);
   border-color: var(--ifm-color-primary);
+  color: var(--ifm-background-color);
 }
 
-/* Admonitions styling */
-.admonition {
-  border-left-width: 0;
-  border: 1px solid var(--glass-border);
-  position: relative;
+/* Code Blocks */
+.theme-code-block {
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
   overflow: hidden;
 }
 
-.admonition::before {
-  content: '';
-  position: absolute;
+/* Grainy Texture (Optional but adds to the character) */
+.main-wrapper::before {
+  content: "";
+  position: fixed;
   top: 0;
   left: 0;
-  width: 4px;
+  width: 100%;
   height: 100%;
-  background-color: var(--ifm-color-primary);
-  /* Default fallback */
-}
-
-.alert--info {
-  --ifm-color-primary: #3b82f6;
-  background-color: rgba(59, 130, 246, 0.05);
-}
-
-.alert--info::before {
-  background-color: #3b82f6;
-}
-
-.alert--success {
-  --ifm-color-primary: #10b981;
-  background-color: rgba(16, 185, 129, 0.05);
-}
-
-.alert--success::before {
-  background-color: #10b981;
-}
-
-.alert--warning {
-  --ifm-color-primary: #f59e0b;
-  background-color: rgba(245, 158, 11, 0.05);
-}
-
-.alert--warning::before {
-  background-color: #f59e0b;
-}
-
-.alert--danger {
-  --ifm-color-primary: #ef4444;
-  background-color: rgba(239, 68, 68, 0.05);
-}
-
-.alert--danger::before {
-  background-color: #ef4444;
-}
-
-/* --- CODE BLOCKS --- */
-.theme-code-block {
-  border-radius: var(--border-radius-base);
-  box-shadow: var(--card-shadow);
-  margin-bottom: 1.5rem;
-}
-
-code {
-  border-radius: 6px;
-  background-color: rgba(148, 163, 184, 0.1);
-  padding: 0.2em 0.4em;
-  font-size: 0.9em;
-}
-
-/* --- FOOTER --- */
-.footer {
-  background-color: var(--ifm-background-color);
-  border-top: 1px solid var(--glass-border);
-}
-
-/* --- HERO SECTION (if used) --- */
-.hero {
-  background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent 40%),
-    radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.15), transparent 40%);
-}
-
-.hero__title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: currentcolor;
-  /* Override for transparency if needed, but simple color is better for accessibility */
-  color: var(--ifm-heading-color);
+  pointer-events: none;
+  opacity: 0.02;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }

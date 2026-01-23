@@ -86,14 +86,16 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
-      defaultMode: 'dark',
+      defaultMode: 'light',
       respectPrefersColorScheme: true,
     },
     navbar: {
       title: 'Smartbook v4',
+      hideOnScroll: true,
       logo: {
         alt: 'Smartbook Logo',
         src: 'img/logo-v2.jpg',
+        style: { borderRadius: '50%' }
       },
       items: [
         {
