@@ -37,8 +37,8 @@ def process_file(filename):
     index_body = parts[0].strip()
     index_body = re.sub(r'^# .+', '', index_body).strip()
     
-    # FIX: Replace <br> with <br /> for MDX compatibility
-    index_body = index_body.replace('<br>', '<br />')
+    # FIX: Replace all variations of <br> with <br /> for MDX compatibility
+    index_body = re.sub(r'<br\s*\/?>', '<br />', index_body, flags=re.IGNORECASE)
     
     # FIX: Wrap title in double quotes to avoid YAML errors with colons
     with open(os.path.join(section_path, 'index.md'), 'w', encoding='utf-8') as f:
@@ -50,8 +50,8 @@ def process_file(filename):
         header = parts[i].strip()
         body = parts[i+1].strip() if i+1 < len(parts) else ""
         
-        # FIX: Replace <br> with <br /> in body
-        body = body.replace('<br>', '<br />')
+        # FIX: Replace all variations of <br> with <br /> in body
+        body = re.sub(r'<br\s*\/?>', '<br />', body, flags=re.IGNORECASE)
         
         clean_title = re.sub(r'^##\s*[\d\.]*\s*', '', header).strip()
         filename_sub = slugify(clean_title) + ".md"
