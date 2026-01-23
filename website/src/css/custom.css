@@ -26,6 +26,10 @@
   --ifm-menu-color: #666666;
   --ifm-menu-color-active: #e6007a;
 
+  /* Search bar expansion animation */
+  --search-local-width: 160px;
+  --search-local-width-focus: 300px;
+
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
@@ -116,8 +120,10 @@ a {
 
 .menu__list-item-collapsible .menu__link {
   font-family: var(--ifm-font-family-base);
-  font-weight: 700; /* Bold headers */
-  color: var(--ifm-heading-color); /* Black/Dark text */
+  font-weight: 700;
+  /* Bold headers */
+  color: var(--ifm-heading-color);
+  /* Black/Dark text */
   font-size: 1rem;
   padding: 0;
 }
@@ -131,7 +137,8 @@ a {
   font-family: var(--ifm-font-family-base);
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--ifm-menu-color); /* Gray text */
+  color: var(--ifm-menu-color);
+  /* Gray text */
   padding: 0.4rem 0.5rem;
   border-radius: 4px;
   transition: color 0.2s ease;
@@ -140,7 +147,8 @@ a {
 
 .menu__link:hover {
   background-color: transparent;
-  color: var(--ifm-color-primary); /* Pink on hover */
+  color: var(--ifm-color-primary);
+  /* Pink on hover */
   text-decoration: none;
 }
 
@@ -148,8 +156,10 @@ a {
   background-color: transparent;
   color: var(--ifm-color-primary) !important;
   font-weight: 700;
-  border-left: 2px solid var(--ifm-color-primary); /* Minimal left border indicator */
-  padding-left: calc(0.5rem - 2px); /* Compensation for border */
+  border-left: 2px solid var(--ifm-color-primary);
+  /* Minimal left border indicator */
+  padding-left: calc(0.5rem - 2px);
+  /* Compensation for border */
 }
 
 /* Hide carets/arrows if desired, or style them subtly */
@@ -283,4 +293,31 @@ a {
   background-color: #083344;
   border-left-color: #06b6d4;
   color: #cffafe;
+}
+/* Custom Search Bar Animation */
+.navbar__search {
+  margin-left: 1rem;
+}
+
+.navbar__search-input {
+  width: var(--search-local-width) !important;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  background-color: var(--ifm-color-emphasis-100) !important;
+  border: 1px solid transparent !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 20px !important;
+}
+
+.navbar__search-input:focus {
+  width: var(--search-local-width-focus) !important;
+  background-color: var(--ifm-background-color) !important;
+  border-color: var(--ifm-color-primary) !important;
+  box-shadow: 0 0 0 2px rgba(230, 0, 122, 0.1) !important;
+  outline: none !important;
+}
+
+@media (max-width: 996px) {
+  .navbar__search-input:focus {
+    width: 200px !important;
+  }
 }

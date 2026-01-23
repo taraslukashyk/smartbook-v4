@@ -61,7 +61,6 @@ const config: Config = {
     ],
   ],
 
-  /*
   plugins: [
     [
       require.resolve("docusaurus-plugin-search-local"),
@@ -69,6 +68,7 @@ const config: Config = {
         hashed: true,
         docsRouteBasePath: "docs",
         highlightSearchTermsOnTargetPage: true,
+        language: ["uk"],
         translations: {
           search_placeholder: "Пошук",
           see_all_results: "Всі результати",
@@ -82,7 +82,6 @@ const config: Config = {
       },
     ],
   ],
-  */
 
   themeConfig: {
     // Replace with your project's social card
@@ -95,7 +94,8 @@ const config: Config = {
       title: 'Smartbook v4',
       logo: {
         alt: 'Smartbook Logo',
-        src: 'img/logo-v2.jpg',
+        src: 'img/logo-light.png',
+        srcDark: 'img/logo-dark.png',
       },
       items: [
         {
