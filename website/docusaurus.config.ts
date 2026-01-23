@@ -53,7 +53,14 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           // editUrl: '...',
         },
-        blog: false, // Disable blog for now
+        blog: {
+          showReadingTime: true,
+          blogTitle: 'Новини проєкту',
+          blogDescription: 'Останні оновлення та події Smartbook V4',
+          postsPerPage: 'ALL',
+          blogSidebarTitle: 'Останні дописи',
+          blogSidebarCount: 5,
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -66,7 +73,7 @@ const config: Config = {
       require.resolve("docusaurus-plugin-search-local"),
       {
         hashed: true,
-        docsRouteBasePath: "docs",
+        docsRouteBasePath: ["docs", "blog"],
         highlightSearchTermsOnTargetPage: true,
         translations: {
           search_placeholder: "Пошук",
@@ -107,6 +114,11 @@ const config: Config = {
           to: '/docs/ВСТУП/', // Slugs usually strip the numbering prefix
           label: 'Стандарти',
           position: 'left',
+        },
+        {
+          to: '/blog',
+          label: 'Блог',
+          position: 'left'
         },
         {
           type: 'search',

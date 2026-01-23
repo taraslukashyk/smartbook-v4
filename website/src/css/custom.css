@@ -95,12 +95,55 @@ html {
 }
 
 /* Sidebar Styling (Minimalist) */
-.theme-doc-sidebar-container {
+.theme-doc-sidebar-container,
+.theme-blog-sidebar-container {
   border-right: 1px solid var(--border-color) !important;
 }
 
-.menu {
+.menu,
+.blog-sidebar {
   padding: 1.5rem 1rem;
+}
+
+/* Blog Specific Styling */
+.blog-list-page h1,
+.blog-post-page h1 {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.blog-list-page article:not(:last-child) {
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 3rem;
+}
+
+.blog-post-content h2,
+.blog-post-content h3 {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 400;
+}
+
+.tag {
+  border-radius: 9999px;
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--border-color);
+  color: var(--ifm-text-color) !important;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-background-color) !important;
+  text-decoration: none;
+}
+
+footer.row.margin-top--md {
+  font-size: 0.9rem;
+  color: var(--ifm-text-color);
 }
 
 .menu__link {
