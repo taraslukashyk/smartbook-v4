@@ -171,6 +171,13 @@ html {
   transition: transform 0.1s ease;
 }
 
+/* Hide Search shortcuts and labels for cleaner look */
+.navbar__search-button-placeholder,
+.DocSearch-Button-Placeholder,
+.DocSearch-Button-Keys {
+  display: none !important;
+}
+
 .button:active {
   transform: scale(0.98);
 }

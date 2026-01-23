@@ -94,19 +94,18 @@ const config: Config = {
       hideOnScroll: true,
       logo: {
         alt: 'Smartbook Logo',
-        src: 'img/logo-v2.jpg',
-        style: { borderRadius: '50%' }
+        src: 'img/logo-v2.png',
       },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: '📚 База Знань',
+          label: 'База Знань',
         },
         {
           to: '/docs/ВСТУП/', // Slugs usually strip the numbering prefix
-          label: '📏 Стандарти',
+          label: 'Стандарти',
           position: 'left',
         },
         {
