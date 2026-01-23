@@ -68,7 +68,6 @@ const config: Config = {
         hashed: true,
         docsRouteBasePath: "docs",
         highlightSearchTermsOnTargetPage: true,
-        language: ["uk"],
         translations: {
           search_placeholder: "Пошук",
           see_all_results: "Всі результати",
@@ -94,19 +93,18 @@ const config: Config = {
       title: 'Smartbook v4',
       logo: {
         alt: 'Smartbook Logo',
-        src: 'img/logo-light.png',
-        srcDark: 'img/logo-dark.png',
+        src: 'img/logo-v2.jpg',
       },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Методичка',
+          label: '📚 База Знань',
         },
         {
           to: '/docs/ВСТУП/', // Slugs usually strip the numbering prefix
-          label: 'Стандарти',
+          label: '📏 Стандарти',
           position: 'left',
         },
         {

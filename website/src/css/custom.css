@@ -1,323 +1,283 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
 
-/**
- * Polkadot Wiki Inspired Theme
- */
 :root {
-  --ifm-font-family-base: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-  --ifm-heading-font-family: 'DM Serif Display', serif;
+  /* --- TYPOGRAPHY --- */
+  --ifm-font-family-base: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', monospace;
+  --ifm-heading-font-family: 'Manrope', sans-serif;
+  --ifm-heading-font-weight: 700;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.6;
 
-  /* Light Mode - Neutral/Stone Palette */
-  /* Polkadot / Wiki Style Colors */
-  --ifm-color-primary: #e6007a;
-  --ifm-color-primary-dark: #cc006d;
-  --ifm-color-primary-darker: #bf0066;
-  --ifm-color-primary-darkest: #990052;
-  --ifm-color-primary-light: #ff1a8e;
-  --ifm-color-primary-lighter: #ff2694;
-  --ifm-color-primary-lightest: #ff4da3;
+  /* --- LIGHT MODE PALETTE (Clean, Professional) --- */
+  --ifm-color-primary: #4f46e5;
+  /* Indigo 600 */
+  --ifm-color-primary-dark: #4338ca;
+  --ifm-color-primary-darker: #3730a3;
+  --ifm-color-primary-darkest: #312e81;
+  --ifm-color-primary-light: #6366f1;
+  --ifm-color-primary-lighter: #818cf8;
+  --ifm-color-primary-lightest: #c7d2fe;
 
-  --ifm-background-color: #ffffff;
-  --ifm-navbar-background-color: #ffffff;
-  --ifm-footer-background-color: #f7f7f7;
+  --ifm-background-color: #f8fafc;
+  /* Slate 50 */
+  --ifm-background-surface-color: #ffffff;
+  --ifm-text-color: #1e293b;
+  /* Slate 800 */
+  --ifm-heading-color: #0f172a;
+  /* Slate 900 */
 
-  --ifm-heading-color: #1a1a1a;
-  --ifm-font-color-base: #333333;
-  --ifm-menu-color: #666666;
-  --ifm-menu-color-active: #e6007a;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(226, 232, 240, 0.6);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 
-  /* Search bar expansion animation */
-  --search-local-width: 160px;
-  --search-local-width-focus: 300px;
-
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-
-  --polkadot-accent: #e6007a;
+  --border-radius-base: 12px;
+  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
 }
 
 [data-theme='dark'] {
-  /* Dark Mode - Polkadot Black/Stone Palette */
-  --ifm-color-primary: #fafaf9;
-  --ifm-color-primary-dark: #f5f5f4;
-  --ifm-color-primary-darker: #e7e5e4;
-  --ifm-color-primary-darkest: #d6d3d1;
-  --ifm-color-primary-light: #ffffff;
-  --ifm-color-primary-lighter: #ffffff;
-  --ifm-color-primary-lightest: #ffffff;
+  /* --- DARK MODE PALETTE (Deep, Premium Vibe) --- */
+  --ifm-color-primary: #818cf8;
+  /* Indigo 400 */
+  --ifm-color-primary-dark: #6366f1;
+  --ifm-color-primary-darker: #4f46e5;
+  --ifm-color-primary-darkest: #4338ca;
+  --ifm-color-primary-light: #a5b4fc;
+  --ifm-color-primary-lighter: #c7d2fe;
+  --ifm-color-primary-lightest: #e0e7ff;
 
-  --ifm-background-color: #0f0f0f;
-  --ifm-navbar-background-color: #0f0f0f;
-  --ifm-footer-background-color: #1c1917;
+  --ifm-background-color: #020617;
+  /* Slate 950 - Deepest Dark */
+  --ifm-background-surface-color: #0f172a;
+  /* Slate 900 */
+  --ifm-text-color: #cbd5e1;
+  /* Slate 300 */
+  --ifm-heading-color: #f8fafc;
+  /* Slate 50 */
 
-  --ifm-heading-color: #fafaf9;
-  --ifm-font-color-base: #a8a29e;
-
-  --ifm-menu-color: #a8a29e;
-  --ifm-menu-color-active: #fafaf9;
-
-  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(15, 23, 42, 0.6);
+  --glass-border: rgba(51, 65, 85, 0.5);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--ifm-heading-font-family);
-  font-weight: 400;
-  letter-spacing: -0.02em;
+/* --- GENERAL LAYOUT & VIBE --- */
+
+html {
+  scroll-behavior: smooth;
 }
 
-.hero--primary {
+.main-wrapper {
   background: var(--ifm-background-color);
-  color: var(--ifm-heading-color);
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
+/* --- NAVBAR --- */
 .navbar {
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: none;
+  height: 4rem;
 }
 
-.footer {
-  border-top: 1px solid var(--ifm-color-emphasis-200);
+.navbar__title {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, var(--ifm-color-primary-light), var(--ifm-color-primary-lighter));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Polkadot accent for specific elements */
-.button--primary {
-  background-color: var(--polkadot-accent);
-  border-color: var(--polkadot-accent);
+.navbar__item {
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
-.button--primary:hover {
-  background-color: #cc006d;
-  border-color: #cc006d;
+.navbar__item:hover {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: var(--ifm-color-primary);
 }
 
-a {
-  text-decoration: none;
+/* --- SIDEBAR --- */
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--glass-border) !important;
+  background-color: transparent !important;
 }
 
-/* Logo Styling */
-.navbar__logo {
-  height: 2.5rem;
-  /* Slightly larger logo */
-  margin-right: 0.5rem;
+.menu {
+  background-color: transparent;
+  padding: 1rem;
 }
 
-/* Modern Sidebar Styling - Matches reference image */
-.menu__list {
-  padding-left: 0;
+.menu__list-item-collapsible {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--ifm-color-emphasis-600);
+  margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
-/* Sidebar Categories (Headers) */
-.menu__list-item-collapsible {
-  padding: 0.5rem 0.5rem;
-  margin-top: 1rem;
-}
-
-.menu__list-item-collapsible .menu__link {
-  font-family: var(--ifm-font-family-base);
-  font-weight: 700;
-  /* Bold headers */
-  color: var(--ifm-heading-color);
-  /* Black/Dark text */
-  font-size: 1rem;
-  padding: 0;
-}
-
-.menu__list-item-collapsible:hover {
-  background: transparent;
-}
-
-/* Sidebar Links (Items) */
 .menu__link {
-  font-family: var(--ifm-font-family-base);
+  border-radius: 8px;
   font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--ifm-menu-color);
-  /* Gray text */
-  padding: 0.4rem 0.5rem;
-  border-radius: 4px;
-  transition: color 0.2s ease;
-  line-height: 1.4;
+  line-height: 1.5;
+  padding: 0.5rem 0.75rem;
+  color: var(--ifm-text-color);
+  transition: all 0.2s ease;
 }
 
 .menu__link:hover {
-  background-color: transparent;
+  background-color: rgba(99, 102, 241, 0.08);
   color: var(--ifm-color-primary);
-  /* Pink on hover */
-  text-decoration: none;
 }
 
 .menu__link--active {
-  background-color: transparent;
-  color: var(--ifm-color-primary) !important;
-  font-weight: 700;
-  border-left: 2px solid var(--ifm-color-primary);
-  /* Minimal left border indicator */
-  padding-left: calc(0.5rem - 2px);
-  /* Compensation for border */
+  background-color: rgba(99, 102, 241, 0.15);
+  color: var(--ifm-color-primary);
+  font-weight: 600;
 }
 
-/* Hide carets/arrows if desired, or style them subtly */
-.menu__caret {
-  opacity: 0.3;
-}
-
-[data-theme='dark'] .menu__link--active {
-  background-color: transparent;
-  color: var(--ifm-color-primary-light) !important;
-  border-left-color: var(--ifm-color-primary-light);
-}
-
-/* Clean monochromatic admonitions */
-.admonition {
-  border-radius: 4px;
-  border-left-width: 4px;
-  background-color: var(--ifm-color-emphasis-100);
-  border-left-color: var(--ifm-heading-color);
-  color: var(--ifm-font-color-base);
-}
-
-.admonition-icon svg {
-  fill: var(--ifm-heading-color);
-}
-
-.admonition-heading {
-  font-family: var(--ifm-font-family-base);
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-}
-
-/* Polkadot Typography extras */
+/* --- CONTENT AREA --- */
 .markdown h1 {
-  font-size: 4rem;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, var(--ifm-color-primary-light), var(--ifm-color-primary-lighter));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 .markdown h2 {
-  font-size: 2rem;
-  margin-top: 3rem;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--glass-border);
   padding-bottom: 0.5rem;
 }
 
-/* Noise/Grain background effect */
-.noise-bg {
-  position: relative;
-  background-color: var(--ifm-background-color);
+.markdown h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
 }
 
-.noise-bg::before {
-  content: "";
+.markdown p {
+  margin-bottom: 1.5rem;
+}
+
+/* --- CARDS & BLOCKS --- */
+.card-container,
+.card,
+.admonition {
+  border-radius: var(--border-radius-base);
+  border: 1px solid var(--glass-border);
+  background-color: var(--ifm-background-surface-color);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: var(--ifm-color-primary);
+}
+
+/* Admonitions styling */
+.admonition {
+  border-left-width: 0;
+  border: 1px solid var(--glass-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.admonition::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 4px;
   height: 100%;
-  opacity: 0.05;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-color: var(--ifm-color-primary);
+  /* Default fallback */
 }
 
-/* Polkadot-style Grid Cards */
-.wiki-card {
-  background: var(--ifm-color-emphasis-0);
-  padding: 1.5rem;
-  border-radius: 4px;
-  transition: transform 0.2s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+.alert--info {
+  --ifm-color-primary: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.05);
 }
 
-.wiki-card:hover {
-  background: var(--ifm-color-emphasis-100);
-  text-decoration: none !important;
+.alert--info::before {
+  background-color: #3b82f6;
 }
 
-.wiki-card h3 {
-  font-family: var(--ifm-heading-font-family);
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+.alert--success {
+  --ifm-color-primary: #10b981;
+  background-color: rgba(16, 185, 129, 0.05);
+}
+
+.alert--success::before {
+  background-color: #10b981;
+}
+
+.alert--warning {
+  --ifm-color-primary: #f59e0b;
+  background-color: rgba(245, 158, 11, 0.05);
+}
+
+.alert--warning::before {
+  background-color: #f59e0b;
+}
+
+.alert--danger {
+  --ifm-color-primary: #ef4444;
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+.alert--danger::before {
+  background-color: #ef4444;
+}
+
+/* --- CODE BLOCKS --- */
+.theme-code-block {
+  border-radius: var(--border-radius-base);
+  box-shadow: var(--card-shadow);
+  margin-bottom: 1.5rem;
+}
+
+code {
+  border-radius: 6px;
+  background-color: rgba(148, 163, 184, 0.1);
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+}
+
+/* --- FOOTER --- */
+.footer {
+  background-color: var(--ifm-background-color);
+  border-top: 1px solid var(--glass-border);
+}
+
+/* --- HERO SECTION (if used) --- */
+.hero {
+  background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.15), transparent 40%);
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: currentcolor;
+  /* Override for transparency if needed, but simple color is better for accessibility */
   color: var(--ifm-heading-color);
-}
-
-.wiki-card p {
-  font-size: 0.95rem;
-  color: var(--ifm-font-color-base);
-  margin-bottom: 0;
-}
-
-/* Primary buttons - Black in Polkadot */
-.button--dark {
-  background-color: #1c1917;
-  color: #fafaf9;
-  border: none;
-  border-radius: 4px;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.button--dark:hover {
-  background-color: #000;
-  color: #fff;
-  text-decoration: none;
-}
-
-[data-theme='dark'] .button--dark {
-  background-color: #fafaf9;
-  color: #1c1917;
-}
-
-[data-theme='dark'] .button--dark:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-/* Info Box (Light Blue) */
-.admonition-info {
-  background-color: #ecfeff;
-  border-left-color: #06b6d4;
-  color: #164e63;
-}
-
-[data-theme='dark'] .admonition-info {
-  background-color: #083344;
-  border-left-color: #06b6d4;
-  color: #cffafe;
-}
-/* Custom Search Bar Animation */
-.navbar__search {
-  margin-left: 1rem;
-}
-
-.navbar__search-input {
-  width: var(--search-local-width) !important;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  background-color: var(--ifm-color-emphasis-100) !important;
-  border: 1px solid transparent !important;
-  padding: 0.5rem 1rem !important;
-  border-radius: 20px !important;
-}
-
-.navbar__search-input:focus {
-  width: var(--search-local-width-focus) !important;
-  background-color: var(--ifm-background-color) !important;
-  border-color: var(--ifm-color-primary) !important;
-  box-shadow: 0 0 0 2px rgba(230, 0, 122, 0.1) !important;
-  outline: none !important;
-}
-
-@media (max-width: 996px) {
-  .navbar__search-input:focus {
-    width: 200px !important;
-  }
 }
