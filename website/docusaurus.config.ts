@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Smartbook Documentation',
   tagline: 'Корпоративна база знань та стандарти',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
 
   // GitHub Pages deployment config
   organizationName: 'taraslukashyk',
