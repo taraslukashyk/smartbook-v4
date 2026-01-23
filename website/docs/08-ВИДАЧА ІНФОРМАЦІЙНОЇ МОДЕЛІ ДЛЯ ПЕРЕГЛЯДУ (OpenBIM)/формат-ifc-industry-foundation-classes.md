@@ -1,5 +1,5 @@
 ---
-title: Формат IFC (Industry Foundation Classes)
+title: "Формат IFC (Industry Foundation Classes)"
 sidebar_position: 3
 ---
 

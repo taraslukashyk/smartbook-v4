@@ -1,5 +1,5 @@
 ---
-title: Експорт Моделі в IFC
+title: "Експорт Моделі в IFC"
 sidebar_position: 4
 ---
 

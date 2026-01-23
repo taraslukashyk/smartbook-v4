@@ -1,5 +1,5 @@
 ---
-title: Оформлення в Просторі Листа (Layout Space)
+title: "Оформлення в Просторі Листа (Layout Space)"
 sidebar_position: 6
 ---
 

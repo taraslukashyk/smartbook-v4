@@ -1,5 +1,5 @@
 ---
-title: Контроль Якості IFC-моделі
+title: "Контроль Якості IFC-моделі"
 sidebar_position: 7
 ---
 

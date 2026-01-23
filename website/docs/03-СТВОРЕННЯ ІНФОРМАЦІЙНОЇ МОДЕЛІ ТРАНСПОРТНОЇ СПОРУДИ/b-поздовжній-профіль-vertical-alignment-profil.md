@@ -1,5 +1,5 @@
 ---
-title: B. Поздовжній профіль (Vertical Alignment / Profile):
+title: "B. Поздовжній профіль (Vertical Alignment / Profile):"
 sidebar_position: 4
 ---
 

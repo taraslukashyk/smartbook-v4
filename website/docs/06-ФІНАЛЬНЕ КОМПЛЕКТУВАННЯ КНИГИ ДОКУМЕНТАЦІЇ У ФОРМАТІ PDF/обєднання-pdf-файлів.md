@@ -1,5 +1,5 @@
 ---
-title: Об'єднання PDF-файлів
+title: "Об'єднання PDF-файлів"
 sidebar_position: 5
 ---
 

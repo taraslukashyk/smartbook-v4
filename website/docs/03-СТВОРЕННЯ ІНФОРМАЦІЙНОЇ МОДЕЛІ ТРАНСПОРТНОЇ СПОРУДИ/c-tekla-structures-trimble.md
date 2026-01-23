@@ -1,5 +1,5 @@
 ---
-title: C. Tekla Structures (Trimble)
+title: "C. Tekla Structures (Trimble)"
 sidebar_position: 14
 ---
 
